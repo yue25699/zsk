@@ -140,13 +140,47 @@ a = [random.randint(20,35) for i in range(120)]</li>
 <span class="pl-s1">plt</span>.<span class="pl-en">title</span>(<span class="pl-s">"十点到十一点每分钟的气温变化情况"</span>)
 <span class="pl-s1">plt</span>.<span class="pl-en">plot</span>(<span class="pl-s1">x</span>, <span class="pl-s1">y</span>)
 <span class="pl-s1">plt</span>.<span class="pl-en">show</span>()</pre></div>
+<ol start="2">
+<li>绘制散点图</li>
+</ol>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">matplotlib</span> <span class="pl-k">import</span> <span class="pl-s1">pyplot</span> <span class="pl-k">as</span> <span class="pl-s1">plt</span>
+<span class="pl-k">import</span> <span class="pl-s1">matplotlib</span>
+
+<span class="pl-s1">font</span> <span class="pl-c1">=</span> {<span class="pl-s">'family'</span>: <span class="pl-s">'MicroSoft YaHei'</span>,
+        <span class="pl-s">'weight'</span>: <span class="pl-s">'bold'</span>,
+        <span class="pl-s">'size'</span>: <span class="pl-c1">10</span>}
+<span class="pl-s1">matplotlib</span>.<span class="pl-en">rc</span>(<span class="pl-s">"font"</span>, <span class="pl-c1">**</span><span class="pl-s1">font</span>)
+<span class="pl-s1">y_3</span> <span class="pl-c1">=</span> [<span class="pl-c1">11</span>, <span class="pl-c1">17</span>, <span class="pl-c1">16</span>, <span class="pl-c1">11</span>, <span class="pl-c1">12</span>, <span class="pl-c1">11</span>, <span class="pl-c1">12</span>, <span class="pl-c1">6</span>, <span class="pl-c1">6</span>, <span class="pl-c1">7</span>, <span class="pl-c1">8</span>, <span class="pl-c1">9</span>, <span class="pl-c1">12</span>, <span class="pl-c1">15</span>, <span class="pl-c1">14</span>, <span class="pl-c1">17</span>, <span class="pl-c1">18</span>, <span class="pl-c1">21</span>, <span class="pl-c1">16</span>, <span class="pl-c1">17</span>, <span class="pl-c1">20</span>, <span class="pl-c1">14</span>, <span class="pl-c1">15</span>, <span class="pl-c1">15</span>, <span class="pl-c1">15</span>, <span class="pl-c1">19</span>, <span class="pl-c1">21</span>, <span class="pl-c1">22</span>, <span class="pl-c1">22</span>,
+       <span class="pl-c1">22</span>,
+       <span class="pl-c1">23</span>]
+<span class="pl-s1">y_10</span> <span class="pl-c1">=</span> [<span class="pl-c1">26</span>, <span class="pl-c1">26</span>, <span class="pl-c1">28</span>, <span class="pl-c1">19</span>, <span class="pl-c1">21</span>, <span class="pl-c1">17</span>, <span class="pl-c1">16</span>, <span class="pl-c1">19</span>, <span class="pl-c1">18</span>, <span class="pl-c1">20</span>, <span class="pl-c1">20</span>, <span class="pl-c1">19</span>, <span class="pl-c1">22</span>, <span class="pl-c1">23</span>, <span class="pl-c1">17</span>, <span class="pl-c1">20</span>, <span class="pl-c1">21</span>, <span class="pl-c1">20</span>, <span class="pl-c1">22</span>, <span class="pl-c1">15</span>, <span class="pl-c1">11</span>, <span class="pl-c1">15</span>, <span class="pl-c1">5</span>, <span class="pl-c1">13</span>, <span class="pl-c1">17</span>, <span class="pl-c1">10</span>, <span class="pl-c1">11</span>, <span class="pl-c1">13</span>,
+        <span class="pl-c1">12</span>,
+        <span class="pl-c1">13</span>, <span class="pl-c1">6</span>]
+<span class="pl-s1">x_3</span> <span class="pl-c1">=</span> <span class="pl-en">range</span>(<span class="pl-c1">1</span>, <span class="pl-c1">32</span>)
+<span class="pl-s1">x_10</span> <span class="pl-c1">=</span> <span class="pl-en">range</span>(<span class="pl-c1">51</span>, <span class="pl-c1">82</span>)
+<span class="pl-c"># 设置图形大小</span>
+<span class="pl-s1">plt</span>.<span class="pl-en">figure</span>(<span class="pl-s1">figsize</span><span class="pl-c1">=</span>(<span class="pl-c1">20</span>, <span class="pl-c1">8</span>), <span class="pl-s1">dpi</span><span class="pl-c1">=</span><span class="pl-c1">80</span>)
+<span class="pl-s1">plt</span>.<span class="pl-en">scatter</span>(<span class="pl-s1">x_3</span>, <span class="pl-s1">y_3</span>, <span class="pl-s1">label</span><span class="pl-c1">=</span><span class="pl-s">"111"</span>)
+<span class="pl-s1">plt</span>.<span class="pl-en">scatter</span>(<span class="pl-s1">x_10</span>, <span class="pl-s1">y_10</span>, <span class="pl-s1">label</span><span class="pl-c1">=</span><span class="pl-c1">222</span>)
+
+<span class="pl-c"># 设置x轴的刻度</span>
+<span class="pl-s1">x_3tick_labels</span> <span class="pl-c1">=</span> [<span class="pl-s">'3月{}日'</span>.<span class="pl-en">format</span>(<span class="pl-s1">i</span>) <span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-s1">x_3</span>]
+<span class="pl-s1">x_10tick_labels</span> <span class="pl-c1">=</span> [<span class="pl-s">'3月{}日'</span>.<span class="pl-en">format</span>(<span class="pl-s1">i</span> <span class="pl-c1">-</span> <span class="pl-c1">50</span>) <span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-s1">x_10</span>]
+<span class="pl-s1">plt</span>.<span class="pl-en">xticks</span>((<span class="pl-en">list</span>(<span class="pl-s1">x_3</span>) <span class="pl-c1">+</span> <span class="pl-en">list</span>(<span class="pl-s1">x_10</span>))[::<span class="pl-c1">3</span>], (<span class="pl-s1">x_3tick_labels</span> <span class="pl-c1">+</span> <span class="pl-s1">x_10tick_labels</span>)[::<span class="pl-c1">3</span>])
+<span class="pl-s1">plt</span>.<span class="pl-en">xlabel</span>(<span class="pl-s">"时间"</span>)
+<span class="pl-s1">plt</span>.<span class="pl-en">ylabel</span>(<span class="pl-s">"温度"</span>)
+<span class="pl-s1">plt</span>.<span class="pl-en">legend</span>(<span class="pl-s1">loc</span><span class="pl-c1">=</span><span class="pl-s">"upper right"</span>)
+<span class="pl-s1">plt</span>.<span class="pl-en">show</span>()</pre></div>
+<p>效果图如下<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/7d3efef2be8d497720634722f6619f1421100c9c3af6d6f774a8abe5aeded004/68747470733a2f2f73322e6c6f6c692e6e65742f323032342f30372f32362f613744345376547748566f6c4b63362e706e67"><img src="https://camo.githubusercontent.com/7d3efef2be8d497720634722f6619f1421100c9c3af6d6f774a8abe5aeded004/68747470733a2f2f73322e6c6f6c692e6e65742f323032342f30372f32362f613744345376547748566f6c4b63362e706e67" alt="a7D4SvTwHVolKc6.png" data-canonical-src="https://s2.loli.net/2024/07/26/a7D4SvTwHVolKc6.png" style="max-width: 100%;"></a></p>
 <h1>课后名词/api</h1>
 <ol>
 <li>axis轴，指的是x轴或y这种坐标轴</li>
 <li>figure 设置图片大小</li>
 <li>xticks yticks 设置x/y轴的间隔</li>
 <li>plot 绘制</li>
-<li></li>
+<li>legend 图例</li>
+<li>scatter 散点图</li>
 </ol></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
