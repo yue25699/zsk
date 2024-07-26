@@ -39,7 +39,7 @@ plt.show()
 > 效果如下
 ![1FA72cHKQnBN5ks.png](https://s2.loli.net/2024/07/25/1FA72cHKQnBN5ks.png)
 
-# 课后练习1 
+# 课后练习
 1. 如果列表a表示10点到12点的每一分钟的气温，如何绘制折线图观察每分钟气温的变化情况？
   a = [random.randint(20,35) for i in range(120)]
 ```python
@@ -104,10 +104,59 @@ plt.show()
 ```
 效果图如下
 ![a7D4SvTwHVolKc6.png](https://s2.loli.net/2024/07/26/a7D4SvTwHVolKc6.png)
+
+3. 绘制条形图
+```python
+from matplotlib import pyplot as plt
+import matplotlib
+
+font = {'family': 'MicroSoft YaHei',
+        'weight': 'bold',
+        'size': 10}
+plt.figure(figsize=(18, 8), dpi=80)
+matplotlib.rc("font", **font)
+a = ["战狼2", "速度与激情8", "功夫瑜伽", "西游伏妖篇", "变形金刚5：最后的骑士", "摔跤吧爸爸", "加勒比海盗5：死无对证",
+     "金刚：骷髅岛", "极限特工：终极回归", "生化危机6：终章", "乘风破浪", "神偷奶爸3", "智取威虎山", "大闹天竺",
+     "金刚狼3：殊死一战", "蜘蛛侠：英雄归来", "悟空传", "银河护卫队2", "情圣", "新木乃伊"]
+b = [56.01, 26.94, 17.53, 16.49, 15.45, 12.96, 11.8, 11.61, 11.28, 11.12, 10.49, 10.3, 8.75, 7.55, 7.32,
+     6.99, 6.88, 6.86, 6.58, 6.23]
+plt.yticks(range(len(a)), a, label="电影")
+plt.barh(range(len(a)), b, height=0.5, color="red")
+plt.grid(alpha=0.5)
+plt.legend(loc='upper right')
+plt.show()
+```
+效果图如下
+![feCVbsyJjNRn1ui.png](https://s2.loli.net/2024/07/26/feCVbsyJjNRn1ui.png)
+4. 绘制条形图（横）
+```python
+from matplotlib import pyplot as plt
+import matplotlib
+
+font = {'family': 'MicroSoft YaHei',
+        'weight': 'bold',
+        'size': 10}
+plt.figure(figsize=(18, 8), dpi=80)
+matplotlib.rc("font", **font)
+a = ["战狼2", "速度与激情8", "功夫瑜伽", "西游伏妖篇", "变形金刚5：最后的骑士", "摔跤吧爸爸", "加勒比海盗5：死无对证",
+     "金刚：骷髅岛", "极限特工：终极回归", "生化危机6：终章", "乘风破浪", "神偷奶爸3", "智取威虎山", "大闹天竺",
+     "金刚狼3：殊死一战", "蜘蛛侠：英雄归来", "悟空传", "银河护卫队2", "情圣", "新木乃伊"]
+b = [56.01, 26.94, 17.53, 16.49, 15.45, 12.96, 11.8, 11.61, 11.28, 11.12, 10.49, 10.3, 8.75, 7.55, 7.32,
+     6.99, 6.88, 6.86, 6.58, 6.23]
+plt.yticks(range(len(a)), a, label="电影")
+plt.barh(range(len(a)), b, height=0.5, color="red")
+plt.grid(alpha=0.5)
+plt.legend(loc='upper right')
+plt.show()
+
+```
+效果图如下
+![image](https://github.com/user-attachments/assets/9a6f57fc-77a9-493e-a1c5-2efa08867bf0)
+
 # 课后名词/api
 1. axis轴，指的是x轴或y这种坐标轴
 2. figure 设置图片大小
-4. xticks yticks 设置x/y轴的间隔
-5. plot 绘制
-6. legend 图例
-7. scatter 散点图
+6. xticks yticks 设置x/y轴的间隔
+7. plot 绘制
+8. legend 图例
+9. scatter 散点图

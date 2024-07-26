@@ -111,7 +111,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>效果如下<br>
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/da491179be5896edea529007f9ad0b883da34547128961bda33b226f5207305c/68747470733a2f2f73322e6c6f6c692e6e65742f323032342f30372f32352f314641373263484b516e424e356b732e706e67"><img src="https://camo.githubusercontent.com/da491179be5896edea529007f9ad0b883da34547128961bda33b226f5207305c/68747470733a2f2f73322e6c6f6c692e6e65742f323032342f30372f32352f314641373263484b516e424e356b732e706e67" alt="1FA72cHKQnBN5ks.png" data-canonical-src="https://s2.loli.net/2024/07/25/1FA72cHKQnBN5ks.png" style="max-width: 100%;"></a></p>
 </blockquote>
-<h1>课后练习1</h1>
+<h1>课后练习</h1>
 <ol>
 <li>如果列表a表示10点到12点的每一分钟的气温，如何绘制折线图观察每分钟气温的变化情况？<br>
 a = [random.randint(20,35) for i in range(120)]</li>
@@ -173,6 +173,50 @@ a = [random.randint(20,35) for i in range(120)]</li>
 <span class="pl-s1">plt</span>.<span class="pl-en">show</span>()</pre></div>
 <p>效果图如下<br>
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/7d3efef2be8d497720634722f6619f1421100c9c3af6d6f774a8abe5aeded004/68747470733a2f2f73322e6c6f6c692e6e65742f323032342f30372f32362f613744345376547748566f6c4b63362e706e67"><img src="https://camo.githubusercontent.com/7d3efef2be8d497720634722f6619f1421100c9c3af6d6f774a8abe5aeded004/68747470733a2f2f73322e6c6f6c692e6e65742f323032342f30372f32362f613744345376547748566f6c4b63362e706e67" alt="a7D4SvTwHVolKc6.png" data-canonical-src="https://s2.loli.net/2024/07/26/a7D4SvTwHVolKc6.png" style="max-width: 100%;"></a></p>
+<ol start="3">
+<li>绘制条形图</li>
+</ol>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">matplotlib</span> <span class="pl-k">import</span> <span class="pl-s1">pyplot</span> <span class="pl-k">as</span> <span class="pl-s1">plt</span>
+<span class="pl-k">import</span> <span class="pl-s1">matplotlib</span>
+
+<span class="pl-s1">font</span> <span class="pl-c1">=</span> {<span class="pl-s">'family'</span>: <span class="pl-s">'MicroSoft YaHei'</span>,
+        <span class="pl-s">'weight'</span>: <span class="pl-s">'bold'</span>,
+        <span class="pl-s">'size'</span>: <span class="pl-c1">10</span>}
+<span class="pl-s1">plt</span>.<span class="pl-en">figure</span>(<span class="pl-s1">figsize</span><span class="pl-c1">=</span>(<span class="pl-c1">18</span>, <span class="pl-c1">8</span>), <span class="pl-s1">dpi</span><span class="pl-c1">=</span><span class="pl-c1">80</span>)
+<span class="pl-s1">matplotlib</span>.<span class="pl-en">rc</span>(<span class="pl-s">"font"</span>, <span class="pl-c1">**</span><span class="pl-s1">font</span>)
+<span class="pl-s1">a</span> <span class="pl-c1">=</span> [<span class="pl-s">"战狼2"</span>, <span class="pl-s">"速度与激情8"</span>, <span class="pl-s">"功夫瑜伽"</span>, <span class="pl-s">"西游伏妖篇"</span>, <span class="pl-s">"变形金刚5：最后的骑士"</span>, <span class="pl-s">"摔跤吧爸爸"</span>, <span class="pl-s">"加勒比海盗5：死无对证"</span>,
+     <span class="pl-s">"金刚：骷髅岛"</span>, <span class="pl-s">"极限特工：终极回归"</span>, <span class="pl-s">"生化危机6：终章"</span>, <span class="pl-s">"乘风破浪"</span>, <span class="pl-s">"神偷奶爸3"</span>, <span class="pl-s">"智取威虎山"</span>, <span class="pl-s">"大闹天竺"</span>,
+     <span class="pl-s">"金刚狼3：殊死一战"</span>, <span class="pl-s">"蜘蛛侠：英雄归来"</span>, <span class="pl-s">"悟空传"</span>, <span class="pl-s">"银河护卫队2"</span>, <span class="pl-s">"情圣"</span>, <span class="pl-s">"新木乃伊"</span>]
+<span class="pl-s1">b</span> <span class="pl-c1">=</span> [<span class="pl-c1">56.01</span>, <span class="pl-c1">26.94</span>, <span class="pl-c1">17.53</span>, <span class="pl-c1">16.49</span>, <span class="pl-c1">15.45</span>, <span class="pl-c1">12.96</span>, <span class="pl-c1">11.8</span>, <span class="pl-c1">11.61</span>, <span class="pl-c1">11.28</span>, <span class="pl-c1">11.12</span>, <span class="pl-c1">10.49</span>, <span class="pl-c1">10.3</span>, <span class="pl-c1">8.75</span>, <span class="pl-c1">7.55</span>, <span class="pl-c1">7.32</span>,
+     <span class="pl-c1">6.99</span>, <span class="pl-c1">6.88</span>, <span class="pl-c1">6.86</span>, <span class="pl-c1">6.58</span>, <span class="pl-c1">6.23</span>]
+<span class="pl-s1">plt</span>.<span class="pl-en">yticks</span>(<span class="pl-en">range</span>(<span class="pl-en">len</span>(<span class="pl-s1">a</span>)), <span class="pl-s1">a</span>, <span class="pl-s1">label</span><span class="pl-c1">=</span><span class="pl-s">"电影"</span>)
+<span class="pl-s1">plt</span>.<span class="pl-en">barh</span>(<span class="pl-en">range</span>(<span class="pl-en">len</span>(<span class="pl-s1">a</span>)), <span class="pl-s1">b</span>, <span class="pl-s1">height</span><span class="pl-c1">=</span><span class="pl-c1">0.5</span>, <span class="pl-s1">color</span><span class="pl-c1">=</span><span class="pl-s">"red"</span>)
+<span class="pl-s1">plt</span>.<span class="pl-en">grid</span>(<span class="pl-s1">alpha</span><span class="pl-c1">=</span><span class="pl-c1">0.5</span>)
+<span class="pl-s1">plt</span>.<span class="pl-en">legend</span>(<span class="pl-s1">loc</span><span class="pl-c1">=</span><span class="pl-s">'upper right'</span>)
+<span class="pl-s1">plt</span>.<span class="pl-en">show</span>()</pre></div>
+<p>效果图如下<br>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/efe91c0910afd1811e1c8e22e98bb7487c22da1152977e976adcde2f6f7f2c2f/68747470733a2f2f73322e6c6f6c692e6e65742f323032342f30372f32362f666543566273794a6a4e526e3175692e706e67"><img src="https://camo.githubusercontent.com/efe91c0910afd1811e1c8e22e98bb7487c22da1152977e976adcde2f6f7f2c2f/68747470733a2f2f73322e6c6f6c692e6e65742f323032342f30372f32362f666543566273794a6a4e526e3175692e706e67" alt="feCVbsyJjNRn1ui.png" data-canonical-src="https://s2.loli.net/2024/07/26/feCVbsyJjNRn1ui.png" style="max-width: 100%;"></a><br>
+4. 绘制条形图（横）</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">matplotlib</span> <span class="pl-k">import</span> <span class="pl-s1">pyplot</span> <span class="pl-k">as</span> <span class="pl-s1">plt</span>
+<span class="pl-k">import</span> <span class="pl-s1">matplotlib</span>
+
+<span class="pl-s1">font</span> <span class="pl-c1">=</span> {<span class="pl-s">'family'</span>: <span class="pl-s">'MicroSoft YaHei'</span>,
+        <span class="pl-s">'weight'</span>: <span class="pl-s">'bold'</span>,
+        <span class="pl-s">'size'</span>: <span class="pl-c1">10</span>}
+<span class="pl-s1">plt</span>.<span class="pl-en">figure</span>(<span class="pl-s1">figsize</span><span class="pl-c1">=</span>(<span class="pl-c1">18</span>, <span class="pl-c1">8</span>), <span class="pl-s1">dpi</span><span class="pl-c1">=</span><span class="pl-c1">80</span>)
+<span class="pl-s1">matplotlib</span>.<span class="pl-en">rc</span>(<span class="pl-s">"font"</span>, <span class="pl-c1">**</span><span class="pl-s1">font</span>)
+<span class="pl-s1">a</span> <span class="pl-c1">=</span> [<span class="pl-s">"战狼2"</span>, <span class="pl-s">"速度与激情8"</span>, <span class="pl-s">"功夫瑜伽"</span>, <span class="pl-s">"西游伏妖篇"</span>, <span class="pl-s">"变形金刚5：最后的骑士"</span>, <span class="pl-s">"摔跤吧爸爸"</span>, <span class="pl-s">"加勒比海盗5：死无对证"</span>,
+     <span class="pl-s">"金刚：骷髅岛"</span>, <span class="pl-s">"极限特工：终极回归"</span>, <span class="pl-s">"生化危机6：终章"</span>, <span class="pl-s">"乘风破浪"</span>, <span class="pl-s">"神偷奶爸3"</span>, <span class="pl-s">"智取威虎山"</span>, <span class="pl-s">"大闹天竺"</span>,
+     <span class="pl-s">"金刚狼3：殊死一战"</span>, <span class="pl-s">"蜘蛛侠：英雄归来"</span>, <span class="pl-s">"悟空传"</span>, <span class="pl-s">"银河护卫队2"</span>, <span class="pl-s">"情圣"</span>, <span class="pl-s">"新木乃伊"</span>]
+<span class="pl-s1">b</span> <span class="pl-c1">=</span> [<span class="pl-c1">56.01</span>, <span class="pl-c1">26.94</span>, <span class="pl-c1">17.53</span>, <span class="pl-c1">16.49</span>, <span class="pl-c1">15.45</span>, <span class="pl-c1">12.96</span>, <span class="pl-c1">11.8</span>, <span class="pl-c1">11.61</span>, <span class="pl-c1">11.28</span>, <span class="pl-c1">11.12</span>, <span class="pl-c1">10.49</span>, <span class="pl-c1">10.3</span>, <span class="pl-c1">8.75</span>, <span class="pl-c1">7.55</span>, <span class="pl-c1">7.32</span>,
+     <span class="pl-c1">6.99</span>, <span class="pl-c1">6.88</span>, <span class="pl-c1">6.86</span>, <span class="pl-c1">6.58</span>, <span class="pl-c1">6.23</span>]
+<span class="pl-s1">plt</span>.<span class="pl-en">yticks</span>(<span class="pl-en">range</span>(<span class="pl-en">len</span>(<span class="pl-s1">a</span>)), <span class="pl-s1">a</span>, <span class="pl-s1">label</span><span class="pl-c1">=</span><span class="pl-s">"电影"</span>)
+<span class="pl-s1">plt</span>.<span class="pl-en">barh</span>(<span class="pl-en">range</span>(<span class="pl-en">len</span>(<span class="pl-s1">a</span>)), <span class="pl-s1">b</span>, <span class="pl-s1">height</span><span class="pl-c1">=</span><span class="pl-c1">0.5</span>, <span class="pl-s1">color</span><span class="pl-c1">=</span><span class="pl-s">"red"</span>)
+<span class="pl-s1">plt</span>.<span class="pl-en">grid</span>(<span class="pl-s1">alpha</span><span class="pl-c1">=</span><span class="pl-c1">0.5</span>)
+<span class="pl-s1">plt</span>.<span class="pl-en">legend</span>(<span class="pl-s1">loc</span><span class="pl-c1">=</span><span class="pl-s">'upper right'</span>)
+<span class="pl-s1">plt</span>.<span class="pl-en">show</span>()</pre></div>
+<p>效果图如下<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/9a6f57fc-77a9-493e-a1c5-2efa08867bf0"><img src="https://github.com/user-attachments/assets/9a6f57fc-77a9-493e-a1c5-2efa08867bf0" alt="image" style="max-width: 100%;"></a></p>
 <h1>课后名词/api</h1>
 <ol>
 <li>axis轴，指的是x轴或y这种坐标轴</li>
