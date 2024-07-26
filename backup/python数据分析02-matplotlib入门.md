@@ -152,11 +152,45 @@ plt.show()
 ```
 效果图如下
 ![image](https://github.com/user-attachments/assets/9a6f57fc-77a9-493e-a1c5-2efa08867bf0)
+5. 绘制复杂条形图
+```python
+from matplotlib import pyplot as plt
+import matplotlib
+
+font = {'family': 'MicroSoft YaHei',
+        'weight': 'bold',
+        'size': 10}
+plt.figure(figsize=(20, 8), dpi=80)
+
+matplotlib.rc("font", **font)
+a = ["猩球崛起3：终极之战", "敦刻尔克", "蜘蛛侠：英雄归来", "战狼2"]
+x = list(range(len(a)))
+b_16 = [15746, 312, 4497, 319]
+b_15 = [12357, 156, 2045, 168]
+b_14 = [2358, 399, 2358, 362]
+bar_width = 0.2
+x_14 = list(range(len(a)))
+x_15 = [i + bar_width for i in x_14]
+x_16 = [i + bar_width * 2 for i in x_14]
+print(x_14)
+print(x_15)
+print(x_16)
+plt.bar(x_14, b_14, width=bar_width, label="14日")
+plt.bar(x_15, b_15, width=bar_width, label="15日")
+plt.bar(x_16, b_16, width=bar_width, label="16日")
+
+plt.xticks(x_15, a)
+plt.legend(loc="upper right")
+plt.show()
+
+```
+效果如下：
+![image](https://github.com/user-attachments/assets/c3049d9b-a5ac-4d2e-b906-a7326864f521)
 
 # 课后名词/api
 1. axis轴，指的是x轴或y这种坐标轴
 2. figure 设置图片大小
-6. xticks yticks 设置x/y轴的间隔
-7. plot 绘制
-8. legend 图例
-9. scatter 散点图
+7. xticks yticks 设置x/y轴的间隔
+8. plot 绘制
+9. legend 图例
+10. scatter 散点图

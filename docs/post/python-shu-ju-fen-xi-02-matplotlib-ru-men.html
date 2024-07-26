@@ -216,7 +216,38 @@ a = [random.randint(20,35) for i in range(120)]</li>
 <span class="pl-s1">plt</span>.<span class="pl-en">legend</span>(<span class="pl-s1">loc</span><span class="pl-c1">=</span><span class="pl-s">'upper right'</span>)
 <span class="pl-s1">plt</span>.<span class="pl-en">show</span>()</pre></div>
 <p>效果图如下<br>
-<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/9a6f57fc-77a9-493e-a1c5-2efa08867bf0"><img src="https://github.com/user-attachments/assets/9a6f57fc-77a9-493e-a1c5-2efa08867bf0" alt="image" style="max-width: 100%;"></a></p>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/9a6f57fc-77a9-493e-a1c5-2efa08867bf0"><img src="https://github.com/user-attachments/assets/9a6f57fc-77a9-493e-a1c5-2efa08867bf0" alt="image" style="max-width: 100%;"></a><br>
+5. 绘制复杂条形图</p>
+<div class="highlight highlight-source-python"><pre class="notranslate"><span class="pl-k">from</span> <span class="pl-s1">matplotlib</span> <span class="pl-k">import</span> <span class="pl-s1">pyplot</span> <span class="pl-k">as</span> <span class="pl-s1">plt</span>
+<span class="pl-k">import</span> <span class="pl-s1">matplotlib</span>
+
+<span class="pl-s1">font</span> <span class="pl-c1">=</span> {<span class="pl-s">'family'</span>: <span class="pl-s">'MicroSoft YaHei'</span>,
+        <span class="pl-s">'weight'</span>: <span class="pl-s">'bold'</span>,
+        <span class="pl-s">'size'</span>: <span class="pl-c1">10</span>}
+<span class="pl-s1">plt</span>.<span class="pl-en">figure</span>(<span class="pl-s1">figsize</span><span class="pl-c1">=</span>(<span class="pl-c1">20</span>, <span class="pl-c1">8</span>), <span class="pl-s1">dpi</span><span class="pl-c1">=</span><span class="pl-c1">80</span>)
+
+<span class="pl-s1">matplotlib</span>.<span class="pl-en">rc</span>(<span class="pl-s">"font"</span>, <span class="pl-c1">**</span><span class="pl-s1">font</span>)
+<span class="pl-s1">a</span> <span class="pl-c1">=</span> [<span class="pl-s">"猩球崛起3：终极之战"</span>, <span class="pl-s">"敦刻尔克"</span>, <span class="pl-s">"蜘蛛侠：英雄归来"</span>, <span class="pl-s">"战狼2"</span>]
+<span class="pl-s1">x</span> <span class="pl-c1">=</span> <span class="pl-en">list</span>(<span class="pl-en">range</span>(<span class="pl-en">len</span>(<span class="pl-s1">a</span>)))
+<span class="pl-s1">b_16</span> <span class="pl-c1">=</span> [<span class="pl-c1">15746</span>, <span class="pl-c1">312</span>, <span class="pl-c1">4497</span>, <span class="pl-c1">319</span>]
+<span class="pl-s1">b_15</span> <span class="pl-c1">=</span> [<span class="pl-c1">12357</span>, <span class="pl-c1">156</span>, <span class="pl-c1">2045</span>, <span class="pl-c1">168</span>]
+<span class="pl-s1">b_14</span> <span class="pl-c1">=</span> [<span class="pl-c1">2358</span>, <span class="pl-c1">399</span>, <span class="pl-c1">2358</span>, <span class="pl-c1">362</span>]
+<span class="pl-s1">bar_width</span> <span class="pl-c1">=</span> <span class="pl-c1">0.2</span>
+<span class="pl-s1">x_14</span> <span class="pl-c1">=</span> <span class="pl-en">list</span>(<span class="pl-en">range</span>(<span class="pl-en">len</span>(<span class="pl-s1">a</span>)))
+<span class="pl-s1">x_15</span> <span class="pl-c1">=</span> [<span class="pl-s1">i</span> <span class="pl-c1">+</span> <span class="pl-s1">bar_width</span> <span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-s1">x_14</span>]
+<span class="pl-s1">x_16</span> <span class="pl-c1">=</span> [<span class="pl-s1">i</span> <span class="pl-c1">+</span> <span class="pl-s1">bar_width</span> <span class="pl-c1">*</span> <span class="pl-c1">2</span> <span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-s1">x_14</span>]
+<span class="pl-en">print</span>(<span class="pl-s1">x_14</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">x_15</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">x_16</span>)
+<span class="pl-s1">plt</span>.<span class="pl-en">bar</span>(<span class="pl-s1">x_14</span>, <span class="pl-s1">b_14</span>, <span class="pl-s1">width</span><span class="pl-c1">=</span><span class="pl-s1">bar_width</span>, <span class="pl-s1">label</span><span class="pl-c1">=</span><span class="pl-s">"14日"</span>)
+<span class="pl-s1">plt</span>.<span class="pl-en">bar</span>(<span class="pl-s1">x_15</span>, <span class="pl-s1">b_15</span>, <span class="pl-s1">width</span><span class="pl-c1">=</span><span class="pl-s1">bar_width</span>, <span class="pl-s1">label</span><span class="pl-c1">=</span><span class="pl-s">"15日"</span>)
+<span class="pl-s1">plt</span>.<span class="pl-en">bar</span>(<span class="pl-s1">x_16</span>, <span class="pl-s1">b_16</span>, <span class="pl-s1">width</span><span class="pl-c1">=</span><span class="pl-s1">bar_width</span>, <span class="pl-s1">label</span><span class="pl-c1">=</span><span class="pl-s">"16日"</span>)
+
+<span class="pl-s1">plt</span>.<span class="pl-en">xticks</span>(<span class="pl-s1">x_15</span>, <span class="pl-s1">a</span>)
+<span class="pl-s1">plt</span>.<span class="pl-en">legend</span>(<span class="pl-s1">loc</span><span class="pl-c1">=</span><span class="pl-s">"upper right"</span>)
+<span class="pl-s1">plt</span>.<span class="pl-en">show</span>()</pre></div>
+<p>效果如下：<br>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/c3049d9b-a5ac-4d2e-b906-a7326864f521"><img src="https://github.com/user-attachments/assets/c3049d9b-a5ac-4d2e-b906-a7326864f521" alt="image" style="max-width: 100%;"></a></p>
 <h1>课后名词/api</h1>
 <ol>
 <li>axis轴，指的是x轴或y这种坐标轴</li>
